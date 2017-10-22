@@ -45,9 +45,12 @@
 
         var experiments = {
             "-5jgBCpwTBGL2Rl44bDygw": [
-                function() {},
+                function() {
+                    console.log('Control')
+                },
                 function() {
                     document.getElementById('optin').checked = true;
+                    console.log('Variation 1')
                 }
             ]
         };
