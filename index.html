@@ -1,61 +1,105 @@
 <!doctype html>
 <head>
-<meta charset="utf-8">
+    <meta charset="utf-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
-<!-- Load the Content Experiment JavaScript API client for the experiment -->
-<script src="//www.google-analytics.com/cx/api.js?experiment=-5jgBCpwTBGL2Rl44bDygw"></script>
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+    <!-- Load the Content Experiment JavaScript API client for the experiment -->
+    <script src="https://www.google-analytics.com/cx/api.js?experiment=-5jgBCpwTBGL2Rl44bDygw"></script>
 
-<script>
-function getParameterByName(name) {
-  name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
-  var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
-      results = regex.exec(location.search);
-  return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
-}
+    <script>
+//        function getParameterByName(name) {
+//            name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+//            var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+//                results = regex.exec(location.search);
+//            return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+//        }
+//
+//        <!-- Force variation by URL argument -->
+//        var varID = getParameterByName('var');
+//        if (!varID) {
+//            var chosenVariation = cxApi.chooseVariation();
+//        }
+//        else {
+//            var chosenVariation = varID;
+//        }
+//        ;
+//
+//        var pageVariations = [
+//            function () {
+//                console.log('original');
+//                ga("set", "dimensionX", "GTM-001_Control"),
+//                ga("send", "event", "AB-test", "GTM-001 Name of the test", "Control", {nonInteraction: 1});
+//            },
+//
+//            function () {
+//                console.log('variation 1');
+//                document.getElementById('optin').checked = true;
+//                ga("set", "dimensionX", "GTM-001_Variation_1"),
+//                ga("send", "event", "AB-test", "GTM-001 Name of the test", "Variation 1", {nonInteraction: 1});
+//            }
+//        ];
+//
+//        $(document).ready(
+//            pageVariations[chosenVariation]
+//        );
 
-var varID = getParameterByName('var');
-if(! varID){ var chosenVariation = cxApi.chooseVariation(); }
-else { var chosenVariation = varID; };
+        var experiments = {
+            "-5jgBCpwTBGL2Rl44bDygw": [
+                function() {},
+                function() {
+                    document.getElementById('optin').checked = true;
+                }
+            ]
+        };
 
-var pageVariations = [
-  function(){
-    console.log('original');
-    ga("set","dimensionX","GTM-001_Control"),
-    ga("send","event","AB-test","GTM-001 Name of the test","Control",{nonInteraction:1});
-  },
+        function getExperiment() {
+            var acksinExp = localStorage.getItem("acksinExperiments");
 
-  function(){
-    console.log('variation 1');
-    document.getElementById('optin').checked = true;
-    ga("set","dimensionX","GTM-001_Variation_1"),
-    ga("send","event","AB-test","GTM-001 Name of the test","Variation 1",{nonInteraction:1});
-  }
-];
+            // Get a new experiment
+            if(acksinExp == null) {
+                var expKeys = Object.keys(experiments);
+                acksinExp = expKeys[Math.floor(Math.random() * expKeys.length)];
 
-$(document).ready(
-  pageVariations[chosenVariation]
-);
-</script>
+                localStorage.setItem("acksinExperiments", acksinExp);
+                return acksinExp;
+            }
 
-<title>A/B Test</title>
+            // Check if experiment is still running, if it is get it.
+            if(acksinExp in experiments) {
+                return acksinExp;
+            }
 
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-8097921-15"></script>
+            // Remove the existing experiment and recurse so we can get the new experiment.
+            localStorage.removeItem("acksinExperiments");
+            return getExperiment();
+        }
 
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+        $.getScript("https://www.google-analytics.com/cx/api.js?experiment=" + getExperiment(), function(){
+            chosenVariation = cxApi.chooseVariation();
+            experiments[getExperiment()][chosenVariation]();
+        });
+    </script>
 
-  gtag('config', 'UA-8097921-15');
-</script>
+    <title>A/B Test</title>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-8097921-15"></script>
+
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-8097921-15');
+    </script>
 
 </head>
 <body>
 <form action="thanks.html">
-<input id="optin" type="checkbox">
-<input type="submit">
+    <input id="optin" type="checkbox">
+    <input type="submit">
 </form>
 
 </body>
