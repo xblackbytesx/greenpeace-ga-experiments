@@ -3,36 +3,36 @@ var experiments = {
         function () {
             console.log('Control'),
                 ga("set", "dimensionX", "GTM-001_Control"),
-                ga("send", "event", "AB-test", "GTM-001 Name of the test", "Control", {nonInteraction: 1});
+                ga("send", "event", "AB-test", "optin", "Control", {nonInteraction: 1});
         },
         function () {
             document.getElementById('optin').checked = true;
             console.log('Variation 1'),
                 ga("set", "dimensionX", "GTM-001_Variation_1"),
-                ga("send", "event", "AB-test", "GTM-001 Name of the test", "Variation 1", {nonInteraction: 1});
+                ga("send", "event", "AB-test", "optin", "Variation 1", {nonInteraction: 1});
         }
     ]
 };
 
 function getExperiment() {
-    var acksinExp = localStorage.getItem("acksinExperiments");
+    var greenpeaceExp = localStorage.getItem("greenpeaceExperiments");
 
     // Get a new experiment
-    if (acksinExp == null) {
+    if (greenpeaceExp == null) {
         var expKeys = Object.keys(experiments);
-        acksinExp = expKeys[Math.floor(Math.random() * expKeys.length)];
+        greenpeaceExp = expKeys[Math.floor(Math.random() * expKeys.length)];
 
-        localStorage.setItem("acksinExperiments", acksinExp);
-        return acksinExp;
+        localStorage.setItem("greenpeaceExperiments", greenpeaceExp);
+        return greenpeaceExp;
     }
 
     // Check if experiment is still running, if it is get it.
-    if (acksinExp in experiments) {
-        return acksinExp;
+    if (greenpeaceExp in experiments) {
+        return greenpeaceExp;
     }
 
     // Remove the existing experiment and recurse so we can get the new experiment.
-    localStorage.removeItem("acksinExperiments");
+    localStorage.removeItem("greenpeaceExperiments");
     return getExperiment();
 }
 
