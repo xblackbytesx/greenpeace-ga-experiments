@@ -77,17 +77,23 @@
             return getExperiment();
         }
 
-        $.getScript("https://www.google-analytics.com/cx/api.js?experiment=" + getExperiment(), function(){
-            <!-- Force variation by URL argument -->
-            var varID = getParameterByName('var');
-            if (!varID) {
-                var chosenVariation = cxApi.chooseVariation();
-            }
-            else {
-                var chosenVariation = varID;
-            }
+        function getParameterByName(name) {
+            name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+            var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+                results = regex.exec(location.search);
+            return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+        }
 
-//            chosenVariation = cxApi.chooseVariation();
+        <!-- Force variation by URL argument -->
+        var varID = getParameterByName('var');
+        if (!varID) {
+            var chosenVariation = cxApi.chooseVariation();
+        }
+        else {
+            var chosenVariation = varID;
+        }
+
+        $.getScript("https://www.google-analytics.com/cx/api.js?experiment=" + getExperiment(), function(){
             experiments[getExperiment()][chosenVariation]();
         });
     </script>
