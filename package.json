@@ -1,0 +1,28 @@
+{
+  "name": "Greenpeace",
+  "version": "1.0.0",
+  "description": "CocaCrap Campaign",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "bower": "^1.7.9",
+    "grunt": "^1.0.1",
+    "grunt-combine-media-queries": "^1.0.20",
+    "grunt-contrib-clean": "^1.1.0",
+    "grunt-contrib-concat": "^1.0.1",
+    "grunt-contrib-cssmin": "^1.0.1",
+    "grunt-contrib-htmlmin": "^1.4.0",
+    "grunt-contrib-imagemin": "^1.0.1",
+    "grunt-contrib-uglify": "^1.0.1",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-csscomb": "^3.1.0",
+    "grunt-sass": "^1.1.0",
+    "jquery": "^3.2.1",
+    "load-grunt-tasks": "^3.5.0",
+    "normalize.css": "^7.0.0"
+  }
+}
