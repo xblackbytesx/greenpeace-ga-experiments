@@ -78,7 +78,16 @@
         }
 
         $.getScript("https://www.google-analytics.com/cx/api.js?experiment=" + getExperiment(), function(){
-            chosenVariation = cxApi.chooseVariation();
+            <!-- Force variation by URL argument -->
+            var varID = getParameterByName('var');
+            if (!varID) {
+                var chosenVariation = cxApi.chooseVariation();
+            }
+            else {
+                var chosenVariation = varID;
+            }
+
+//            chosenVariation = cxApi.chooseVariation();
             experiments[getExperiment()][chosenVariation]();
         });
     </script>
