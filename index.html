@@ -1,56 +1,33 @@
 <!doctype html>
 <head>
     <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>A/B Test</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+    <link rel="stylesheet" href="css/normalize.min.css">
+    <link rel="stylesheet" href="css/main.css">
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
     <!-- Load the Content Experiment JavaScript API client for the experiment -->
     <script src="https://www.google-analytics.com/cx/api.js?experiment=-5jgBCpwTBGL2Rl44bDygw"></script>
 
     <script>
-//        function getParameterByName(name) {
-//            name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
-//            var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
-//                results = regex.exec(location.search);
-//            return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
-//        }
-//
-//        <!-- Force variation by URL argument -->
-//        var varID = getParameterByName('var');
-//        if (!varID) {
-//            var chosenVariation = cxApi.chooseVariation();
-//        }
-//        else {
-//            var chosenVariation = varID;
-//        }
-//        ;
-//
-//        var pageVariations = [
-//            function () {
-//                console.log('original');
-//                ga("set", "dimensionX", "GTM-001_Control"),
-//                ga("send", "event", "AB-test", "GTM-001 Name of the test", "Control", {nonInteraction: 1});
-//            },
-//
-//            function () {
-//                console.log('variation 1');
-//                document.getElementById('optin').checked = true;
-//                ga("set", "dimensionX", "GTM-001_Variation_1"),
-//                ga("send", "event", "AB-test", "GTM-001 Name of the test", "Variation 1", {nonInteraction: 1});
-//            }
-//        ];
-//
-//        $(document).ready(
-//            pageVariations[chosenVariation]
-//        );
-
         var experiments = {
             "-5jgBCpwTBGL2Rl44bDygw": [
                 function() {
-                    console.log('Control')
+                    console.log('Control'),
+                    ga("set", "dimensionX", "GTM-001_Control"),
+                    ga("send", "event", "AB-test", "GTM-001 Name of the test", "Control", {nonInteraction: 1});
                 },
                 function() {
                     document.getElementById('optin').checked = true;
-                    console.log('Variation 1')
+                    console.log('Variation 1'),
+                    ga("set", "dimensionX", "GTM-001_Variation_1"),
+                    ga("send", "event", "AB-test", "GTM-001 Name of the test", "Variation 1", {nonInteraction: 1});
                 }
             ]
         };
@@ -98,8 +75,6 @@
         });
     </script>
 
-    <title>A/B Test</title>
-
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-8097921-15"></script>
 
@@ -112,13 +87,63 @@
 
         gtag('config', 'UA-8097921-15');
     </script>
-
 </head>
 <body>
-<form action="thanks.html">
-    <input id="optin" type="checkbox">
-    <input type="submit">
-</form>
+<header>
+    <figure>
+        <img src="img/logo_stop_de_cola_crap_lang_wit.png" />
+    </figure>
+</header>
+
+<div class="campaign-title">
+    <section>
+        <h1>COCA-COLA FLEST DE ZEE, STOP DE PLASTIC VERVUILING</h1>
+    </section>
+</div>
+
+<div class="container">
+    <div class="main-wrapper">
+        <main>
+            <article>
+                <h1>Steun ons</h1>
+            </article>
+        </main>
+    </div>
+    <artdiv class="sidebar-wrapper">
+        <aside>
+            <section>
+                <h2>JA, IK WIL HET ZEELEVEN BESCHERMEN TEGEN PLASTICGIGANT COCA-COLA.</h2>
+                <form action="thanks.html">
+                    <input name="naam" type="text" minlength="2" id="naam" placeholder="Voornaam">
+                    <input name="mail" type="text" id="mail" placeholder="E-mail">
+                    <input name="telefoon" type="text" minlength="10" id="telefoon" placeholder="Telefoon (optioneel)">
+
+                    <input id="optin" type="checkbox">
+                    <input type="submit">
+                </form>
+            </section>
+
+            <section>
+                <article>
+                    <p>
+                    Aan: James Quincey, directeur Coca-Cola<br>
+                    <br>
+                    Onze oceanen worden overspoeld door miljarden wegwerpflessen – groot én klein – zoals die van Coca-Cola. Al dat plastic bedreigt het zeeleven en komt via de voedselketen uiteindelijk ook op mijn bord terecht. <br>
+                    <br>
+                    Coca-Cola produceert 110 miljard plastic wegwerpflessen per jaar. Omdat uw bedrijf zich wereldwijd fel verzet tegen goede oplossingen zoals statiegeld, houd ik Coca-Cola medeverantwoordelijk voor de plastic soep in onze oceanen. <br>
+                    <br>
+                    Alleen samen kunnen we ervoor zorgen dat de plastic soep niet nóg groter wordt. Ik roep u daarom op om wegwerpplastic uit te faseren, te beginnen met meer recycling en hergebruik en door te investeren in alternatieven voor plastic. <br>
+                    </p>
+                </article>
+            </section>
+        </aside>
+    </div>
+</div>
+
+<footer>
+    <a href="#">Teken de petitie</a>
+    <a href="#">Doneer</a>
+</footer>
 
 </body>
 </html>
