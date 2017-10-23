@@ -98,14 +98,14 @@
 
     <script>
         $(document).ready(function() {
-            $('.btn-primary') {
-                ga('send', {
-                    hitType: 'event',
-                    eventCategory: 'form',
-                    eventAction: 'submitted',
-                    eventLabel: 'optin'
+            $('.btn-primary').click(function(e) {
+                e.preventDefault();
+                gtag('event', {
+                    'event_category': 'form',
+                    'event_action': 'sumitted',
+                    'event_label': 'optin',
                 });
-            }
+            });
         });
     </script>
     </body>
