@@ -142,16 +142,16 @@ aside {
   }
 
   .form-optin {
-    display: flex;
-    flex-flow: row nowrap;
+    //display: flex;
+    //flex-flow: row nowrap;
+    position: relative;
     margin: $half-gutter 0;
+    padding-left: (13 + $half-gutter);
 
     span:first-child {
-      flex: 0 0 30px;
-    }
-
-    span:last-child {
-      margin-top: -4px;
+      position: absolute;
+      top: 4px;
+      left: 0;
     }
   }
 
@@ -215,6 +215,11 @@ footer {
 
     .form-optin {
       margin: $full-gutter 0;
+      padding-left: (13 + $full-gutter);
+
+      //span:first-child {
+      //  flex: 0 0 (13 + $full-gutter);
+      //}
     }
 
     article {

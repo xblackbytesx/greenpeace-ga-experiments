@@ -144,17 +144,15 @@ aside input[type='email']:last-child {
 }
 
 aside .form-optin {
-	display: flex;
-	flex-flow: row nowrap;
+	position: relative;
 	margin: 8px 0;
+	padding-left: 21px;
 }
 
 aside .form-optin span:first-child {
-	flex: 0 0 30px;
-}
-
-aside .form-optin span:last-child {
-	margin-top: -4px;
+	position: absolute;
+	top: 4px;
+	left: 0;
 }
 
 aside .checkbox-label {
@@ -216,6 +214,7 @@ aside form {
 
 aside .form-optin {
 	margin: 16px 0;
+	padding-left: 29px;
 }
 
 aside article {
