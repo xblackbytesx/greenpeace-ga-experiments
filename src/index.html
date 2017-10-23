@@ -98,18 +98,11 @@
 
         <script>
             $(document).ready(function() {
+                var submitButton = $('.btn-primary');
                 var petitionForm = $('form');
-                petitionForm.on('submit', function(e) {
-                    e.preventDefault();
 
-//                    gtag('event', 'optin', {
-//                        'event_category': 'form',
-//                        'event_action': 'submitted',
-//                        'event_label': 'optin',
-//                        'event_callback': function() {
-//                            form.submit();
-//                        }
-//                    });
+                submitButton.on('click', function(e) {
+                    e.preventDefault();
 
                     gtag('event', 'form_submitted', {
                         'event_callback': function() {
