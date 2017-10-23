@@ -99,7 +99,12 @@
     <script>
         $(document).ready(function() {
             $('.btn-primary') {
-                ga('send', 'event', 'Clicks', 'Logo', 'First Screen');
+                ga('send', {
+                    hitType: 'event',
+                    eventCategory: 'form',
+                    eventAction: 'submitted',
+                    eventLabel: 'optin'
+                });
             }
         });
     </script>
