@@ -1,0 +1,17 @@
+.campaign-title {
+  padding: $half-gutter;
+  text-align: center;
+  background-color: $color-coke;
+  color: #FFF;
+
+  section {
+    max-width: 992px;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (min-width: $tablet) {
+  .campaign-title {
+    padding: $full-gutter;
+  }
+}

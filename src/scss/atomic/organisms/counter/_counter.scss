@@ -1,0 +1,32 @@
+.counter {
+  display: block;
+  position: relative;
+  padding: 5px 5px 5px 7px;
+  background-color: #CCC;
+  color: #FFF;
+  font-family: 'Montserrat', cursive;
+  font-size: .9em;
+  margin-bottom: $half-gutter;
+}
+
+.counter-progress {
+  width: 52%;
+  height: 100%;
+  background-color: $color-coke;
+  opacity: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+}
+
+.counter-content {
+  position: relative;
+  z-index: 20;
+}
+
+@media screen and (min-width: $tablet) {
+  .counter {
+    margin-bottom: $full-gutter;
+  }
+}

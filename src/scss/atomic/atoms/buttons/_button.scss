@@ -1,0 +1,14 @@
+button,
+input[type='submit'] {
+  cursor: pointer;
+}
+
+.btn-primary {
+  padding: 5px 10px;
+  background-color: $color-coke;
+  color: #FFF;
+  font-weight: 800;
+  text-transform: uppercase;
+  border: 1px solid darken($color-coke, .2);
+  border-radius: 2px;
+}

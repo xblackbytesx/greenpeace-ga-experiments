@@ -1,0 +1,23 @@
+.form-optin {
+  position: relative;
+  margin: $half-gutter 0;
+  padding-left: (13 + $half-gutter);
+
+  span:first-child {
+    position: absolute;
+    top: 4px;
+    left: 0;
+  }
+}
+
+.checkbox-label {
+  font-size: .65em;
+  line-height: 1.2em;
+}
+
+@media screen and (min-width: $tablet) {
+  .form-optin {
+    margin: $full-gutter 0;
+    padding-left: (13 + $full-gutter);
+  }
+}
