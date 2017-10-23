@@ -98,14 +98,15 @@
 
         <script>
             $(document).ready(function() {
-                $('form').submit(function(e) {
+                var form = $('form');
+                form.submit(function(e) {
                     e.preventDefault();
-                    gtag('event', {
+                    gtag('event', 'optin', {
                         'event_category': 'form',
                         'event_action': 'submitted',
                         'event_label': 'optin',
                         'event_callback': function() {
-                            $(this).submit();
+                            form.submit();
                         }
                     });
                 });
