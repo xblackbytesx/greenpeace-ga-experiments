@@ -149,7 +149,6 @@ module.exports = function(grunt) {
         'imagemin',
         'uglify:js',
         'htmlmin',
-        'copy:tests',
         'clean'
     ]);
 }

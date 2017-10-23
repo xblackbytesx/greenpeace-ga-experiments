@@ -96,17 +96,17 @@
             <a href="#">Doneer</a>
         </footer>
 
-    <script>
-        $(document).ready(function() {
-            $('.btn-primary').click(function(e) {
-                e.preventDefault();
-                gtag('event', {
-                    'event_category': 'form',
-                    'event_action': 'sumitted',
-                    'event_label': 'optin',
+        <script>
+            $(document).ready(function() {
+                $('.btn-primary').click(function(e) {
+                    e.preventDefault();
+                    gtag('event', {
+                        'event_category': 'form',
+                        'event_action': 'sumitted',
+                        'event_label': 'optin'
+                    });
                 });
             });
-        });
-    </script>
+        </script>
     </body>
 </html>
