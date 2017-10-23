@@ -57,7 +57,7 @@ module.exports = function(grunt) {
                 },
                 src: [
                     'node_modules/jquery/dist/jquery.min.js',
-                    'src/js/ab.js'
+                    'src/js/ablytics.js'
                     // 'src/js/analytics-experiments.js'
                 ],
                 dest: '<%= config.tmpPath %>/js/main.js'
