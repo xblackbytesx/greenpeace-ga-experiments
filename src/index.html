@@ -97,13 +97,16 @@
         </footer>
 
         <script>
-            $(document).ready(function() {
-                $('.btn-primary').click(function(e) {
+            $(document).ready(function() {xx
+                $('form').submit(function(e) {
                     e.preventDefault();
-                    gtag('event', {
+                    gtag('event', 'optin', {
                         'event_category': 'form',
-                        'event_action': 'sumitted',
-                        'event_label': 'optin'
+                        'event_action': 'submitted',
+                        'event_label': 'optin',
+                        'event_callback': function() {
+                            this.submit();
+                        }
                     });
                 });
             });
