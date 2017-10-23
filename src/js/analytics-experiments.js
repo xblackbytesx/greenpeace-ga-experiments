@@ -43,16 +43,16 @@ function getParameterByName(name) {
     return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
 }
 
-<!-- Force variation by URL argument -->
-var varID = getParameterByName('var');
-var chosenVariation = null;
-
-if (!varID) {
-    chosenVariation = cxApi.chooseVariation();
-}
-else {
-    chosenVariation = varID;
-}
+// <!-- Force variation by URL argument -->
+// var varID = getParameterByName('var');
+// var chosenVariation = null;
+//
+// if (!varID) {
+//     chosenVariation = cxApi.chooseVariation();
+// }
+// else {
+//     chosenVariation = varID;
+// }
 
 $.getScript("https://www.google-analytics.com/cx/api.js?experiment=" + getExperiment(), function () {
     experiments[getExperiment()][chosenVariation]();
