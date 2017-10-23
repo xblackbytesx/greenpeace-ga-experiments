@@ -34,7 +34,7 @@ img {
 	flex-flow: column nowrap;
 	max-width: 992px;
 	margin: 0 auto;
-	padding: 8px;
+	padding: 8px 8px 0 8px;
 }
 
 .main-wrapper,
@@ -186,6 +186,30 @@ input[type='email']:last-child {
 	z-index: 20;
 }
 
+footer {
+	display: flex;
+	left: 0;
+	bottom: 0;
+	background: rgba(0, 0, 0, 0.8);
+	width: 100%;
+	padding: 16px;
+	color: #FFF;
+}
+
+footer a {
+	display: inline-block;
+	margin-left: 16px;
+	font-size: 1.1em;
+	font-weight: 800;
+	text-decoration: none;
+	color: #FFF;
+	text-transform: uppercase;
+}
+
+footer a:first-child {
+	margin-left: 0;
+}
+
 header {
 	display: flex;
 	flex-flow: row nowrap;
@@ -252,28 +276,7 @@ aside article {
 }
 
 footer {
-	display: flex;
 	position: fixed;
-	left: 0;
-	bottom: 0;
-	background: rgba(0, 0, 0, 0.8);
-	width: 100%;
-	padding: 16px;
-	color: #FFF;
-}
-
-footer a {
-	display: inline-block;
-	margin-left: 16px;
-	font-size: 1.1em;
-	font-weight: 800;
-	text-decoration: none;
-	color: #FFF;
-	text-transform: uppercase;
-}
-
-footer a:first-child {
-	margin-left: 0;
 }
 
 header figure {

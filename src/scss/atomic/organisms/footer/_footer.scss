@@ -1,26 +1,29 @@
+footer {
+  display: flex;
+  left: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, .8);
+  width: 100%;
+  padding: $full-gutter;
+  color: #FFF;
+
+  a {
+    display: inline-block;
+    margin-left: $full-gutter;
+    font-size: 1.1em;
+    font-weight: 800;
+    text-decoration: none;
+    color: #FFF;
+    text-transform: uppercase;
+  }
+
+  a:first-child {
+    margin-left: 0;
+  }
+}
+
 @media screen and (min-width: $tablet) {
   footer {
-    display: flex;
     position: fixed;
-    left: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, .8);
-    width: 100%;
-    padding: $full-gutter;
-    color: #FFF;
-
-    a {
-      display: inline-block;
-      margin-left: $full-gutter;
-      font-size: 1.1em;
-      font-weight: 800;
-      text-decoration: none;
-      color: #FFF;
-      text-transform: uppercase;
-    }
-
-    a:first-child {
-      margin-left: 0;
-    }
   }
 }

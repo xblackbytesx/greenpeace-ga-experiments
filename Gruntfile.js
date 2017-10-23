@@ -57,7 +57,8 @@ module.exports = function(grunt) {
                 },
                 src: [
                     'node_modules/jquery/dist/jquery.min.js',
-                    'src/js/analytics-experiments.js'
+                    'src/js/ab.js'
+                    // 'src/js/analytics-experiments.js'
                 ],
                 dest: '<%= config.tmpPath %>/js/main.js'
             }
@@ -125,6 +126,15 @@ module.exports = function(grunt) {
             }
         },
 
+        copy: {
+            tests: {
+                expand: true,
+                cwd: 'src/',
+                src: ['tests/**'],
+                dest: 'dist/'
+            }
+        },
+
         clean: {
             folder: ['<%= config.tmpPath %>']
         }
@@ -140,6 +150,7 @@ module.exports = function(grunt) {
         'imagemin',
         'uglify:js',
         'htmlmin',
+        'copy:tests',
         'clean'
     ]);
 }

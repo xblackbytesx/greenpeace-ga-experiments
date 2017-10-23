@@ -34,7 +34,7 @@ img {
   flex-flow: column nowrap;
   max-width: 992px;
   margin: 0 auto;
-  padding: $half-gutter;
+  padding: $half-gutter $half-gutter 0 $half-gutter;
 }
 
 .main-wrapper,
