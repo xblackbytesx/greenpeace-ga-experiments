@@ -1,5 +1,5 @@
 var experiments = {
-    "xFp4kXRGQ8-rVmd-8x47FA": [
+    "kiXvaD1bQgihHyOCZ-2Buw": [
         function () {
             console.log('Control');
         },

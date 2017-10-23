@@ -98,15 +98,22 @@
 
         <script>
             $(document).ready(function() {
-                var form = $('form');
-                form.submit(function(e) {
+                var petitionForm = $('form');
+                petitionForm.on('submit', function(e) {
                     e.preventDefault();
-                    gtag('event', 'optin', {
-                        'event_category': 'form',
-                        'event_action': 'submitted',
-                        'event_label': 'optin',
+
+//                    gtag('event', 'optin', {
+//                        'event_category': 'form',
+//                        'event_action': 'submitted',
+//                        'event_label': 'optin',
+//                        'event_callback': function() {
+//                            form.submit();
+//                        }
+//                    });
+
+                    gtag('event', 'form_submitted', {
                         'event_callback': function() {
-                            form.submit();
+                            petitionForm.submit();
                         }
                     });
                 });
