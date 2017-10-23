@@ -11,20 +11,6 @@ var experiments = {
                 ga("set", "dimensionX", "GTM-001_Variation_1"),
                 ga("send", "event", "AB-test", "optin", "Variation 1", {nonInteraction: 1});
         }
-    ],
-    "IQK-ceqaToiIVzfOzrFsvA": [
-        function () {
-            console.log('Control'),
-                ga("set", "dimensionY", "GTM-001_Control"),
-                ga("send", "event", "AB-test", "campaign-title", "Control", {nonInteraction: 1});
-        },
-        function () {
-            document.querySelector('.campaign-title h1').textContent = 'test';
-            alert('yay');
-            console.log('Variation 1'),
-                ga("set", "dimensionY", "GTM-001_Variation_1"),
-                ga("send", "event", "AB-test", "campaign-title", "Variation 1", {nonInteraction: 1});
-        }
     ]
 };
 
