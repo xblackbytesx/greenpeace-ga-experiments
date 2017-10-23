@@ -26,13 +26,13 @@
     <body>
         <header>
             <figure>
-                <img src="img/logo_stop_de_cola_crap_lang_wit.png" />
+                <img src="img/logo_stop_de_cola_crap_lang_wit.png" alt="Cola Crap" />
             </figure>
         </header>
 
         <div class="campaign-title">
             <section>
-                <h1>COCA-COLA FLEST DE ZEE, STOP DE PLASTIC VERVUILING</h1>
+                <h1>coca-cola flest de zee, stop de plastic vervuiling</h1>
             </section>
         </div>
 
@@ -40,21 +40,35 @@
             <div class="main-wrapper">
                 <main>
                     <article>
-                        <h1>Steun ons</h1>
+                        <figure>
+                            <img src="img/cola_crap_spoof_petition.jpg" alt="Cola Crap" />
+                        </figure>
                     </article>
                 </main>
             </div>
-            <artdiv class="sidebar-wrapper">
+            <div class="sidebar-wrapper">
                 <aside>
                     <section>
-                        <h2>JA, IK WIL HET ZEELEVEN BESCHERMEN TEGEN PLASTICGIGANT COCA-COLA.</h2>
+                        <h2>ja, ik wil het zeeleven beschermen tegen plasticgigant coca-cola.</h2>
                         <form action="thanks.html">
-                            <input name="naam" type="text" minlength="2" id="naam" placeholder="Voornaam">
-                            <input name="mail" type="text" id="mail" placeholder="E-mail">
-                            <input name="telefoon" type="text" minlength="10" id="telefoon" placeholder="Telefoon (optioneel)">
+                            <fieldset>
+                            <input type="text" placeholder="Voornaam">
+                            <input type="email" placeholder="E-mail">
+                            <input type="text" placeholder="Telefoon (optioneel)">
+                            </fieldset>
 
-                            <input id="optin" type="checkbox">
-                            <input type="submit">
+                            <fieldset class="form-optin">
+                                <span>
+                                    <input id="optin" name="optin" value="0" type="checkbox">
+                                </span>
+                                <span>
+                                    <label for="optin" class="checkbox-label">Ja, ik teken de petitie om het zeeleven te beschermen tegen plasticgigant Coca-Cola en Greenpeace mag mij per email of telefonisch op de hoogte over de voortgang van deze plastic- en andere campagnes houden en hiervoor extra steun vragen.</label>
+                                </span>
+                            </fieldset>
+
+                            <fieldset>
+                                <input class="btn-primary" type="submit" value="Teken nu">
+                            </fieldset>
                         </form>
                     </section>
 

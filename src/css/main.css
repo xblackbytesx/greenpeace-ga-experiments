@@ -9,8 +9,16 @@
 }
 
 body {
+	font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
 	background: #EFEFEF url("../img/maxresdefault.jpg") no-repeat fixed center 0;
 	background-size: cover;
+}
+
+h1,
+h2 {
+	margin: 0;
+	padding: 0;
+	text-transform: uppercase;
 }
 
 h1 {
@@ -18,21 +26,52 @@ h1 {
 	font-weight: 800;
 	font-size: 1.5em;
 	letter-spacing: .07em;
-	margin: 0;
-	padding: 0;
 }
 
-p {
+h2 {
+	font-size: 1.3em;
+}
+
+p,
+figure {
 	margin: 0;
+}
+
+figure {
+	line-height: 0;
+}
+
+fieldset {
+	border: 0;
+	margin: 0;
+	padding: 0;
 }
 
 img {
 	max-width: 100%;
 }
 
+button,
+input[type='submit'] {
+	text-transform: uppercase;
+}
+
+.btn-primary {
+	padding: 5px 10px;
+	background-color: #fe001a;
+	color: #FFF;
+	font-weight: 800;
+	border: 1px solid #fd001a;
+	border-radius: 2px;
+}
+
 header {
 	display: flex;
 	flex-flow: row nowrap;
+}
+
+header figure {
+	margin: 8px;
 }
 
 header img {
@@ -42,7 +81,7 @@ header img {
 .campaign-title {
 	padding: 8px;
 	text-align: center;
-	background-color: #FF0000;
+	background-color: #fe001a;
 	color: #FFF;
 }
 
@@ -62,11 +101,15 @@ header img {
 .main-wrapper,
 .sidebar-wrapper {
 	flex: 1 1 50%;
+	margin-bottom: 8px;
 }
 
-main,
-aside {
-	padding: 8px;
+.main-wrapper {
+	order: 2;
+}
+
+.sidebar-wrapper {
+	order: 1;
 }
 
 main {
@@ -74,15 +117,47 @@ main {
 }
 
 aside {
+	padding: 8px;
 	background-color: #FFF;
 	background-color: rgba(255, 255, 255, 0.8);
 }
 
-aside input {
+aside h2 {
+	margin-bottom: 8px;
+}
+
+aside form {
+	margin-bottom: 8px;
+}
+
+aside input[type='text'] {
 	display: block;
 	width: 100%;
 	padding: 10px;
 	margin-bottom: 10px;
+}
+
+aside input[type='text']:last-child {
+	margin-bottom: 0;
+}
+
+aside .form-optin {
+	display: flex;
+	flex-flow: row nowrap;
+	margin: 8px 0;
+}
+
+aside .form-optin span:first-child {
+	flex: 0 0 30px;
+}
+
+aside .form-optin span:last-child {
+	margin-top: -4px;
+}
+
+aside .checkbox-label {
+	font-size: .65em;
+	line-height: 1.2em;
 }
 
 aside article {
@@ -100,6 +175,10 @@ h1 {
 	font-size: 2.8em;
 }
 
+header figure {
+	margin: 16px;
+}
+
 .campaign-title {
 	padding: 16px;
 }
@@ -109,9 +188,32 @@ h1 {
 	padding: 16px 16px 75px 16px;
 }
 
-main,
+.main-wrapper {
+	order: 1;
+}
+
+.sidebar-wrapper {
+	order: 2;
+}
+
+main {
+	padding-right: 16px;
+}
+
 aside {
 	padding: 16px;
+}
+
+aside h2 {
+	margin-bottom: 16px;
+}
+
+aside form {
+	margin-bottom: 16px;
+}
+
+aside .form-optin {
+	margin: 16px 0;
 }
 
 aside article {
